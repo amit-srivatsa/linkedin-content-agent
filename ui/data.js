@@ -13,7 +13,7 @@ window.ACME = {
     ideas: 20,
     published: 0,
     visuals: 1,
-    references: 10
+    references: 0
   },
   pillars: [
     { id: "diagnostics", name: "Diagnostics", share: "25%", tint: "teal", cta: "Request a site survey" },
@@ -85,18 +85,7 @@ window.ACME = {
       status: "generated"
     }
   ],
-  references: [
-    { file: "brand/design-references/Pasted 2026-11-02 at 5.07.52 PM.png", title: "Hello telephone" },
-    { file: "brand/design-references/Pasted 2026-11-02 at 5.09.11 PM.png", title: "Reference 5.09.11" },
-    { file: "brand/design-references/Pasted 2026-11-02 at 5.09.20 PM.png", title: "Reference 5.09.20" },
-    { file: "brand/design-references/Pasted 2026-11-02 at 5.09.33 PM.png", title: "Reference 5.09.33" },
-    { file: "brand/design-references/Pasted 2026-11-02 at 5.09.47 PM.png", title: "Reference 5.09.47" },
-    { file: "brand/design-references/Pasted 2026-11-02 at 5.10.02 PM.png", title: "Reference 5.10.02" },
-    { file: "brand/design-references/Pasted 2026-11-02 at 5.10.17 PM.png", title: "Reference 5.10.17" },
-    { file: "brand/design-references/Pasted_Image_20261102_170740.png", title: "Pasted image 17:07" },
-    { file: "brand/design-references/Pasted_Image_20261102_170820.png", title: "Pasted image 17:08" },
-    { file: "brand/design-references/Pasted_Image_20261102_170832.png", title: "Pasted image 17:08" }
-  ],
+  references: [],
   ideas: [
     { n: 1, pillarId: "diagnostics", pillar: "Diagnostics", format: "Text", reader: "Developer, consultant", hook: "The flood test passed on Tuesday. Here is what that does and does not tell you.", cta: "Request a site survey", check: false },
     { n: 2, pillarId: "systems", pillar: "Systems and materials", format: "Carousel", reader: "Main contractor, consultant", hook: "Two roofs, same building, two different systems. Here is why.", cta: "Download the checklist", check: false },

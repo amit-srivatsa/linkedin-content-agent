@@ -95,7 +95,7 @@ Open `index.html` in a browser (or serve the folder with `python3 -m http.server
 
 - Studio: LinkedIn company-page preview, hook fold, word count, copy for paste.
 - Drafts: every file in `content/drafts/`.
-- Assets: generated visuals plus `brand/design-references/`.
+- Assets: generated visuals plus your own images in `brand/design-references/`.
 - Ideas: the 20-idea board.
 - Pipeline: this workflow.
 

@@ -10,7 +10,7 @@ Turns an approved draft into an image prompt and a visual brief that fit the Acm
 ## Inputs
 
 1. A draft in `content/drafts/` with its hook, final copy and CTA.
-2. The reference images in `brand/design-references/`.
+2. Your own reference images in `brand/design-references/` (not included in this repo; add a few that match your brand).
 3. The design spec: `skills/visual/references/image-prompt-spec.json`.
 
 ## Step 1: Load
@@ -20,7 +20,7 @@ Read, do not rely on memory:
 - The draft and its "Visual brief" section.
 - `skills/visual/references/image-prompt-spec.json`.
 - `brand/voice.md` and `brand/audience.md` for guardrails.
-- A few images from `brand/design-references/` to match the style.
+- A few images from `brand/design-references/` to match the style, if you have added any.
 - `memory/agent-memory.md`, if it has content.
 
 ## Step 2: Choose the archetype

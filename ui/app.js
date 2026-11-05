@@ -258,7 +258,9 @@
     generated.innerHTML = DATA.assets.length
       ? DATA.assets.map((a) => assetCard(a.file, a.title, a.meta, a.draftId)).join("")
       : `<div class="empty">No generated visuals yet.</div>`;
-    refs.innerHTML = DATA.references.map((r) => assetCard(r.file, r.title, "Brand design reference")).join("");
+    refs.innerHTML = DATA.references.length
+      ? DATA.references.map((r) => assetCard(r.file, r.title, "Brand design reference")).join("")
+      : `<div class="empty">No reference images yet. Add your own to brand/design-references and list them in ui/data.js.</div>`;
   }
 
   function assetCard(file, title, meta, draftId) {
