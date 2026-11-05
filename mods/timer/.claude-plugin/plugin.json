@@ -1,0 +1,6 @@
+{
+  "name": "timer",
+  "version": "0.1.0",
+  "description": "Start a timer with /timer or by asking, and watch its progress in the status line",
+  "types": "./types/index.d.ts"
+}

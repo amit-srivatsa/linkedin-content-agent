@@ -1,0 +1,166 @@
+{
+  "system_objective": "Visual hierarchy and layout specification for automated LinkedIn creative generation",
+  "aspect_ratio": "4:5 (optimal for LinkedIn mobile feed) or 1:1 (square)",
+  "core_design_patterns": [
+    {
+      "pattern_name": "Surreal Metaphor Hook",
+      "visual_concept": "Literal juxtaposition of everyday problems with exaggerated or unexpected objects",
+      "examples_in_dataset": [
+        "Elephant sitting on roof to show strength",
+        "Muscular flexed arms drawn onto house roofline",
+        "Ring box presenting miniature house",
+        "Gloved hand shielding miniature house from rain",
+        "Roof styled as an open weather umbrella"
+      ],
+      "best_for": "B2B hooks, service reliability, high-stakes decision making, insurance, and agency services"
+    },
+    {
+      "pattern_name": "Clever Object / Visual Pun",
+      "visual_concept": "Isolated physical objects paired with witty handwritten or typography cues",
+      "examples_in_dataset": [
+        "Retro telephone receiver with cartoon speech bubble",
+        "Green keyboard keycaps 'W' and 'E' spelling 'Who We Are'",
+        "Flashlight casting light across canvas to symbolize discovery"
+      ],
+      "best_for": "Agency culture, introductions, thought leadership hooks, and conversation starters"
+    },
+    {
+      "pattern_name": "Curiosity Gap / Editorial Reveal",
+      "visual_concept": "High-contrast textured background with a physical disruption element revealing the punchline",
+      "examples_in_dataset": [
+        "Torn paper reveal contrasting bold headline with serif truth"
+      ],
+      "best_for": "Contrarian takes, myths vs facts, carousel title slides, and tactical frameworks"
+    },
+    {
+      "pattern_name": "Direct Service & Social Proof",
+      "visual_concept": "Dramatic dynamic crop of real operational work paired with high-clarity typography block",
+      "examples_in_dataset": [
+        "Architectural angle of roof work with question hook and CTA badge"
+      ],
+      "best_for": "Case studies, direct lead gen, operational audits, and quotes"
+    }
+  ],
+  "visual_hierarchy_framework": {
+    "zone_1_header": {
+      "relative_height": "10% - 18%",
+      "elements": [
+        "Brand mark / logo (top-left or top-right)",
+        "Category tag or secondary trust badges (e.g., ISO, 'creative agency')",
+        "Whitespace buffer (minimum 5% canvas margin)"
+      ],
+      "rules": "Keep secondary to prevent competing with focal anchor."
+    },
+    "zone_2_focal_hero": {
+      "relative_height": "50% - 65%",
+      "elements": [
+        "Primary visual anchor (isolated 3D asset, surreal composition, or central object)",
+        "Shadowing & depth (soft directional drop shadow grounding object on studio plane)",
+        "Negative space (minimum 30% canvas area around subject)"
+      ],
+      "rules": "Must communicate the core premise instantly at 0.5-second feed scroll speed."
+    },
+    "zone_3_typography": {
+      "relative_height": "20% - 30%",
+      "positioning_variants": [
+        "Stacked top above subject",
+        "Split top-and-bottom framing subject",
+        "Anchored below subject"
+      ],
+      "font_hierarchy": {
+        "primary_hook": "Ultra-bold sans-serif or heavy display (32-48pt scale equivalent)",
+        "secondary_clarifier": "Medium sans-serif or contrasting editorial serif/handwriting",
+        "text_highlighting": "Targeted color shifts on critical trigger words"
+      }
+    },
+    "zone_4_footer_and_cta": {
+      "relative_height": "8% - 15%",
+      "elements": [
+        "CTA button (pill or rounded rectangle)",
+        "Contact channels (phone, URL, carousel swipe hint)",
+        "Optional solid color bar anchor"
+      ],
+      "rules": "Subtle, clear contact path; avoid visual clutter."
+    }
+  },
+  "color_and_style_guidelines": {
+    "backgrounds": "Off-white, subtle paper grain, light radial studio vignette, or bold monochrome solid",
+    "palette_strategy": "1 dominant neutral (70%), 1 brand anchor tone (20%), 1 punchy accent (10%)",
+    "lighting": "Soft directional studio lighting with natural ambient occlusion."
+  },
+  "agent_execution_schema": {
+    "_note": "The original export was cut off inside step_2_image_prompt. Everything in this block was written by Claude on 2026-11-02 to complete it, following the framework above. Replace it if you recover the original.",
+    "step_1_intent": "Determine image archetype (Metaphor, Pun, Reveal, Direct). Give one sentence on why it suits the post's pillar and reader.",
+    "step_2_image_prompt": {
+      "archetype": "One of: Surreal Metaphor Hook, Clever Object / Visual Pun, Curiosity Gap / Editorial Reveal, Direct Service & Social Proof",
+      "subject": "String. A single hero subject with a clear material, scale and action, e.g. 'a miniature concrete podium deck sheltered under an open yellow umbrella'. One subject only.",
+      "setting": "String. Studio plane, texture or backdrop from color_and_style_guidelines.backgrounds. Commercial or industrial cues only.",
+      "composition": {
+        "aspect_ratio": "4:5 by default, 1:1 if requested",
+        "camera": "String. Angle and lens feel, e.g. 'eye level, 50mm, shallow depth of field'",
+        "subject_position": "center | upper-third | lower-third",
+        "negative_space": "At least 30 percent of the canvas around the subject",
+        "text_layout": "One of zone_3_typography.positioning_variants"
+      },
+      "style": {
+        "render": "3D studio render | flat illustration | paper cut-out | annotated diagram",
+        "lighting": "Soft directional studio lighting with natural ambient occlusion",
+        "shadow": "Soft directional drop shadow grounding the object on the studio plane",
+        "texture": "Optional: subtle paper grain or matte plastic. No photoreal fake site photos."
+      },
+      "palette": {
+        "dominant_neutral": "Hex or name, about 70 percent",
+        "brand_anchor": "Hex or name, about 20 percent",
+        "accent": "Hex or name, about 10 percent, used on the key trigger word and CTA"
+      },
+      "text_overlay": {
+        "headline": "String. Sentence case, no em dashes, ideally 8 words or fewer. Taken from the approved draft hook.",
+        "highlight_word": "The one word in the headline that takes the accent colour",
+        "clarifier": "Optional String. One short line in a contrasting editorial serif or handwriting.",
+        "cta_label": "String. Matches the draft's single CTA: Request a site survey | Download the checklist | Book a call",
+        "demo_figure_tag": "Include '[DEMO FIGURE]' if any placeholder figure appears, otherwise null"
+      },
+      "header_elements": {
+        "brand_mark": "PLACEHOLDER: 'Acme logo here'. Never invent a logo.",
+        "category_tag": "Optional plain label such as 'Waterproofing'. No ISO or certification badges.",
+        "contact": "PLACEHOLDER only. Never invent a phone number or URL."
+      },
+      "avoid": [
+        "fake photographs of real sites or projects",
+        "invented logos, certifications, client names or contact details",
+        "residential imagery",
+        "competitor names, prices",
+        "disaster, collapse or fear imagery",
+        "garbled or extra text beyond headline, clarifier and CTA",
+        "em dashes in any rendered text"
+      ]
+    },
+    "step_3_assemble_prompt": "Join subject, setting, composition, style, palette and text_overlay into one natural-language prompt for the image tool. Keep the structured JSON alongside it.",
+    "step_4_guardrail_check": [
+      "Archetype fits the pillar and reader",
+      "Hero subject readable in 0.5 seconds",
+      "Headline matches the approved draft hook",
+      "Exactly one CTA, matching the draft",
+      "No invented logos, badges, photos, figures or contact details",
+      "Any placeholder figure is tagged [DEMO FIGURE]",
+      "Text is sentence case with UK spelling and no em dashes"
+    ],
+    "step_5_output": {
+      "save_to": "Next to the draft in content/drafts/, or in a Visual section of the draft",
+      "fields": [
+        "archetype",
+        "reason",
+        "json_prompt",
+        "assembled_prompt",
+        "rendered_text",
+        "status",
+        "items_for_amit_to_check"
+      ],
+      "status_values": [
+        "pending",
+        "generated",
+        "approved"
+      ]
+    }
+  }
+}

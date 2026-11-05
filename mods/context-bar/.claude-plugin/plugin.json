@@ -1,0 +1,6 @@
+{
+  "name": "context-bar",
+  "version": "0.2.0",
+  "description": "/context-bar toggles a small colored context bar above the chat input",
+  "types": "./types/index.d.ts"
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acme studio · LinkedIn review skin</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffd02f'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' font-family='sans-serif' fill='%23050038'%3EA%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="Local review skin for Acme Waterproofing LinkedIn drafts. Nothing is published from this page.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ui/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="promo">
+    <span class="chip">Local only</span>
+    Nothing is published or sent from this page. Amit reviews every post.
+  </div>
+
+  <header class="topnav">
+    <a class="brand" href="#studio" data-view="studio">
+      <span class="wordmark" aria-hidden="true">A</span>
+      <span>
+        <span class="brand-name">Acme studio</span>
+        <span class="brand-sub">LinkedIn review skin</span>
+      </span>
+    </a>
+    <button class="icon-btn menu-toggle" id="menu-toggle" type="button" data-action="toggle-nav" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="#studio" data-view="studio" class="active">Studio</a>
+      <a href="#drafts" data-view="drafts">Drafts <span class="count" id="count-drafts">0</span></a>
+      <a href="#assets" data-view="assets">Assets <span class="count" id="count-assets">0</span></a>
+      <a href="#ideas" data-view="ideas">Ideas <span class="count" id="count-ideas">0</span></a>
+      <a href="#pipeline" data-view="pipeline">Pipeline</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-secondary hide-sm" type="button" data-action="copy-post">Copy post</button>
+      <button class="btn btn-primary" type="button" data-action="mark-reviewed" id="mark-reviewed">Mark reviewed (local only)</button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="view active" data-view="studio">
+      <div class="wrap">
+        <div class="page-head">
+          <div>
+            <p class="kicker">Step 7 · Local web skin</p>
+            <h1>See the post as LinkedIn will.</h1>
+            <p class="lede">Edit the copy, check the hook fold, and preview the 4:5 image on a company-page card. Files stay in this folder until you paste them yourself.</p>
+          </div>
+        </div>
+        <div class="studio">
+          <aside class="panel" aria-label="Draft editor">
+            <h2>Draft</h2>
+            <div class="field">
+              <label for="draft-select">Open a draft</label>
+              <select id="draft-select"></select>
+            </div>
+            <p class="hint" id="cta-line"></p>
+            <div class="field">
+              <label>Hooks</label>
+              <div class="hooks" id="hook-list"></div>
+            </div>
+            <div class="field">
+              <label for="post-editor">Post copy</label>
+              <textarea id="post-editor" spellcheck="true"></textarea>
+              <p class="hint">First 140 characters sit above the “see more” fold on mobile.</p>
+            </div>
+            <div class="metrics" id="metrics"></div>
+            <div class="field">
+              <label>
+                <input id="image-toggle" type="checkbox" checked>
+                Show visual in the preview
+              </label>
+            </div>
+            <div class="row">
+              <button class="btn btn-primary" type="button" data-action="copy-post">Copy for LinkedIn</button>
+              <button class="btn btn-secondary" type="button" data-action="copy-raw">Copy raw</button>
+              <button class="btn btn-ghost" type="button" data-action="preview-asset">Open visual</button>
+            </div>
+            <div class="notes" id="review-notes" style="margin-top:20px"></div>
+          </aside>
+          <div>
+            <div class="preview-stage">
+              <div class="preview-toolbar">
+                <div>
+                  <p class="kicker">LinkedIn preview</p>
+                  <strong>Acme Waterproofing company page</strong>
+                </div>
+                <div class="seg" role="group" aria-label="Preview size">
+                  <button type="button" data-device="desktop" aria-pressed="true">Desktop</button>
+                  <button type="button" data-device="mobile" aria-pressed="false">Mobile</button>
+                </div>
+              </div>
+              <div id="li-feed" class="li-feed"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" data-view="drafts">
+      <div class="wrap">
+        <div class="page-head">
+          <div>
+            <p class="kicker">content/drafts</p>
+            <h1>Existing drafts</h1>
+            <p class="lede">Open a card to load it into the LinkedIn preview. Published posts will appear here after you move them to content/published.</p>
+          </div>
+          <label class="visually-hidden" for="global-search" style="position:absolute;left:-9999px">Search drafts and ideas</label>
+          <input class="search" id="global-search" type="search" placeholder="Search drafts">
+        </div>
+        <div class="grid" id="draft-grid"></div>
+        <h2 class="section-title">Published</h2>
+        <div class="empty">Nothing published yet. After Amit posts, move the file to content/published with the URL.</div>
+      </div>
+    </section>
+
+    <section class="view" data-view="assets">
+      <div class="wrap">
+        <div class="page-head">
+          <div>
+            <p class="kicker">Visuals</p>
+            <h1>Assets you have created</h1>
+            <p class="lede">Generated post images sit with the draft. Style references live in brand/design-references.</p>
+          </div>
+        </div>
+        <h2 class="section-title">Generated visuals</h2>
+        <div class="grid" id="asset-generated"></div>
+        <h2 class="section-title">Design references</h2>
+        <div class="grid" id="asset-refs"></div>
+      </div>
+    </section>
+
+    <section class="view" data-view="ideas">
+      <div class="wrap">
+        <div class="page-head">
+          <div>
+            <p class="kicker">content/ideas</p>
+            <h1>Twenty post ideas</h1>
+            <p class="lede">Sticky notes by pillar. Ideas marked CHECK need a grade A source or a demo figure before they become drafts.</p>
+          </div>
+          <input class="search" id="idea-search" type="search" placeholder="Search ideas">
+        </div>
+        <div class="filters" role="group" aria-label="Filter by pillar">
+          <button class="btn btn-primary" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="btn btn-secondary" type="button" data-filter="diagnostics">Diagnostics</button>
+          <button class="btn btn-secondary" type="button" data-filter="systems">Systems</button>
+          <button class="btn btn-secondary" type="button" data-filter="warranty">Warranty</button>
+          <button class="btn btn-secondary" type="button" data-filter="process">Process</button>
+          <button class="btn btn-secondary" type="button" data-filter="uae">UAE myths</button>
+        </div>
+        <div class="board" id="idea-board"></div>
+      </div>
+    </section>
+
+    <section class="view" data-view="pipeline">
+      <div class="wrap">
+        <div class="page-head">
+          <div>
+            <p class="kicker">workflows/create-post</p>
+            <h1>How a post moves through the agent</h1>
+            <p class="lede">If quality check fails, only the failing step is redone. Stop after three failed loops and ask Amit.</p>
+          </div>
+        </div>
+        <div class="flow" id="pipeline-flow"></div>
+        <div class="stats" style="margin-top:32px">
+          <div class="stat yellow"><div class="num">20</div><div class="label">Ideas queued</div></div>
+          <div class="stat coral"><div class="num">1</div><div class="label">Draft in review</div></div>
+          <div class="stat teal"><div class="num">1</div><div class="label">Visual generated</div></div>
+          <div class="stat rose"><div class="num">0</div><div class="label">Published</div></div>
+          <div class="stat orange"><div class="num">5</div><div class="label">Pillars</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="foot-grid">
+      <div>
+        <h2>Acme Waterproofing</h2>
+        <p>Demo company for this LinkedIn agent. Commercial and industrial work in the UAE. Voice: plain, reassuring, technically sound.</p>
+      </div>
+      <div>
+        <h2>Rules</h2>
+        <ul>
+          <li>No invented clients or certifications</li>
+          <li>Demo figures stay tagged</li>
+          <li>No em dashes in public copy</li>
+          <li>Amit posts it himself</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Folders</h2>
+        <ul>
+          <li>content/drafts</li>
+          <li>content/ideas</li>
+          <li>content/published</li>
+          <li>brand/design-references</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Open this file</h2>
+        <p>Double-click index.html, or serve the folder with python3 -m http.server 8765 and visit localhost:8765.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Asset preview">
+    <div class="lightbox-inner">
+      <div class="lightbox-bar">
+        <strong id="lightbox-title">Asset</strong>
+        <button class="btn btn-secondary" type="button" data-action="close-lightbox">Close</button>
+      </div>
+      <img id="lightbox-img" alt="">
+    </div>
+  </dialog>
+
+  <script src="ui/data.js"></script>
+  <script src="ui/app.js"></script>
+</body>
+</html>
